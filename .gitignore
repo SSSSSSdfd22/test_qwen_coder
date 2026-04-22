@@ -1,14 +1,1 @@
-```
-# Build artifacts
-client/dist/
-# Dependencies
-node_modules/
-# Editor/IDE files
-.vscode/
-.idea/
-*.swp
-*.swo
-*.tmp
-# Logs
-*.log
-```
+Nothing should be ignored based on the provided file changes. The only added file is a source code file (`client/src/components/Navbar.jsx`) which should not be ignored.
