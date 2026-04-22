@@ -1,3 +1,4 @@
+Nothing should be ignored based on the provided file changes. The only added file is a source code file (`client/src/components/Navbar.jsx`) which should not be ignored.
 ```
 # Build artifacts
 client/dist/
