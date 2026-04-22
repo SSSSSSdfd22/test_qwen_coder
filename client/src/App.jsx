@@ -1,0 +1,28 @@
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import About from './pages/About';
+import AdminLogin from './pages/AdminLogin';
+import AdminDashboard from './pages/AdminDashboard';
+import ProtectedRoute from './components/ProtectedRoute';
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/projects" element={<Projects />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/admin" element={<AdminLogin />} />
+      <Route 
+        path="/admin/dashboard" 
+        element={
+          <ProtectedRoute>
+            <AdminDashboard />
+          </ProtectedRoute>
+        } 
+      />
+    </Routes>
+  );
+}
+
+export default App;

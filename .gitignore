@@ -1,53 +1,14 @@
 ```
+# Build artifacts
+client/dist/
 # Dependencies
 node_modules/
-
-# Environment variables
-.env
-
-# Build artifacts (from server node_modules)
-server/node_modules/
-
-# Logs
-*.log
-
-# Temporary files
-*.tmp
-*.swp
-
-# IDE files
+# Editor/IDE files
 .vscode/
 .idea/
-
-# OS generated files
-.DS_Store
-Thumbs.db
-
-# Package lock files
-package-lock.json
-
-# Compressed files
-*.zip
-*.gz
-*.tar
-*.tgz
-*.bz2
-*.xz
-*.7z
-*.rar
-*.zst
-*.lz4
-*.lzh
-*.cab
-*.arj
-*.rpm
-*.deb
-*.Z
-*.lz
-*.lzo
-*.tar.gz
-*.tar.bz2
-*.tar.xz
-*.tar.zst
-
+*.swp
+*.swo
+*.tmp
+# Logs
+*.log
 ```
