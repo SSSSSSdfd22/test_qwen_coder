@@ -5,8 +5,8 @@ const projectSchema = new mongoose.Schema({
   description: { type: String, required: true },
   techStack: [{ type: String }],
   thumbnail: { type: String },
-  liveDemoUrl: { type: String },
-  githubUrl: { type: String },
+  liveDemo: { type: String },
+  github: { type: String },
   category: { type: String, default: 'General' }
 }, { timestamps: true });
 
