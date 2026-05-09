@@ -12,11 +12,11 @@ import projectRoutes from './routes/projectRoutes.js';
 import aboutRoutes from './routes/aboutRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
 
-// Load env vars
-dotenv.config();
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// Load env vars from root directory
+dotenv.config({ path: path.join(__dirname, '../.env') });
 
 const app = express();
 
