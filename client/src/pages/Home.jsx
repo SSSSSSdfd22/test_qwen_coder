@@ -12,7 +12,7 @@ function Home() {
   useEffect(() => {
     const fetchCardData = async () => {
       try {
-        const response = await axios.get(`${API_URL}/card`);
+        const response = await axios.get(`${API_URL}/profile`);
         setCardData(response.data);
       } catch (error) {
         console.error('Error fetching card data:', error);

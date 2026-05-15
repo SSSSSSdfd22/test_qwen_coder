@@ -1,9 +1,15 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
 import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import Admin from './models/Admin.js';
 
-dotenv.config();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Load env vars from root directory
+dotenv.config({ path: path.join(__dirname, '../.env') });
 
 const seedAdmin = async () => {
   try {
