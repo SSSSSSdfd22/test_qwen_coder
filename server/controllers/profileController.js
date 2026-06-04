@@ -1,20 +1,22 @@
 import Profile from '../models/Profile.js';
 
+const getDefaultProfileData = () => ({
+  name: 'John Doe',
+  jobTitle: 'Full Stack Developer',
+  tagline: 'Building amazing digital experiences',
+  email: 'john@example.com',
+  phone: '+1234567890',
+  linkedin: 'https://linkedin.com/in/johndoe',
+  github: 'https://github.com/johndoe',
+  website: 'https://johndoe.com'
+});
+
 export const getProfile = async (req, res) => {
   try {
     let profile = await Profile.findOne();
     
     if (!profile) {
-      profile = await Profile.create({
-        name: 'John Doe',
-        jobTitle: 'Full Stack Developer',
-        tagline: 'Building amazing digital experiences',
-        email: 'john@example.com',
-        phone: '+1234567890',
-        linkedin: 'https://linkedin.com/in/johndoe',
-        github: 'https://github.com/johndoe',
-        website: 'https://johndoe.com'
-      });
+      profile = await Profile.create(getDefaultProfileData());
     }
     
     res.json(profile);

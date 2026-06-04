@@ -3,11 +3,7 @@ import Project from '../models/Project.js';
 export const getProjects = async (req, res) => {
   try {
     const { category } = req.query;
-    let query = {};
-    
-    if (category && category !== 'All') {
-      query.category = category;
-    }
+    const query = category && category !== 'All' ? { category } : {};
     
     const projects = await Project.find(query).sort({ createdAt: -1 });
     res.json(projects);
