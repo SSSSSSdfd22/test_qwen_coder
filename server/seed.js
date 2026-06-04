@@ -8,7 +8,6 @@ import Admin from './models/Admin.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Load env vars from root directory
 dotenv.config({ path: path.join(__dirname, '../.env') });
 
 const seedAdmin = async () => {
@@ -16,7 +15,6 @@ const seedAdmin = async () => {
     await mongoose.connect(process.env.MONGODB_URI);
     console.log('Connected to MongoDB');
 
-    // Check if admin already exists
     const existingAdmin = await Admin.findOne({ email: 'admin@example.com' });
     
     if (existingAdmin) {
@@ -25,11 +23,9 @@ const seedAdmin = async () => {
       process.exit(0);
     }
 
-    // Hash password
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash('admin123', salt);
 
-    // Create admin user
     const admin = await Admin.create({
       email: 'admin@example.com',
       password: hashedPassword

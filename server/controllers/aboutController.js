@@ -1,18 +1,20 @@
 import About from '../models/About.js';
 
+const getDefaultAboutData = () => ({
+  bio: 'Passionate developer with experience in building web applications.',
+  profileImage: '',
+  experiences: [],
+  educations: [],
+  skills: ['JavaScript', 'React', 'Node.js', 'MongoDB'],
+  contactDetails: {}
+});
+
 export const getAbout = async (req, res) => {
   try {
     let about = await About.findOne();
     
     if (!about) {
-      about = await About.create({
-        bio: 'Passionate developer with experience in building web applications.',
-        profileImage: '',
-        experiences: [],
-        educations: [],
-        skills: ['JavaScript', 'React', 'Node.js', 'MongoDB'],
-        contactDetails: {}
-      });
+      about = await About.create(getDefaultAboutData());
     }
     
     res.json(about);
